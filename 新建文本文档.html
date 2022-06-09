@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="checkbox" id="1">
+        <label for="1"></label>
+        <input type="checkbox" id="2">
+        <label for="2"></label>
+        <input type="checkbox" id="3">
+        <label for="3"></label>
+        <input type="checkbox" id="4">
+        <label for="4"></label>
+        <br>
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <br>
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <br>
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+    </div>
+    <script>
+        var div = document.querySelector('div')
+        var elArr = document.querySelectorAll('input');
+
+
+        function mouseEve(e) {
+            e.target.checked = !e.target.checked
+        }
+
+        div.addEventListener('mousedown',(e)=>{
+            e.bubbles = false
+            div.addEventListener('mouseover',mouseEve)
+        })
+        // 鼠标松开监听
+        div.addEventListener('mouseup',(e)=>{
+            div.removeEventListener('mouseover',mouseEve)
+        })
+    </script>
+</body>
+</html>
